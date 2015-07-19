@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<typeAliases>
+		<package name="com.kentsong.spring.mybatis.mapper"/>
+	</typeAliases>
+	
+	<mappers>
+		<package name="com.kentsong.spring.mybatis.mapper"/>
+	</mappers>
+	
+	<!-- mapper初始化有問題時,建議一隻一隻mapping,debug
+	<mappers>
+		<package name="com.symphox.selling.model.istore.mybatis.cia"/>
+		<package name="com.symphox.selling.model.istore.mybatis.coupon"/>
+		<package name="com.symphox.selling.model.istore.mybatis.forecast"/>
+		<package name="com.symphox.selling.model.istore.mybatis.main"/>
+		<package name="com.symphox.selling.model.istore.mybatis.member"/>
+		<package name="com.symphox.selling.model.istore.mybatis.order"/>
+		<package name="com.symphox.selling.model.istore.mybatis.point"/>
+		<package name="com.symphox.selling.model.istore.mybatis.sms"/>
+		<package name="com.symphox.selling.model.istore.mybatis.symphox"/>
+		<package name="com.symphox.selling.model.smsdb.mybatis.sms"/>
+	</mappers>   
+	 -->
+	
+</configuration>
