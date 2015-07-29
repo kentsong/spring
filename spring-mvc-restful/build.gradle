@@ -1,0 +1,55 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    maven {
+        url = "http://repo1.maven.org/maven2/"
+    }
+}
+
+configurations {
+	compile.exclude module: 'jcl-over-slf4j'
+	compile.exclude module: 'jul-to-slf4j'
+	compile.exclude module: 'log4j-over-slf4j'
+}
+
+dependencies {
+	runtime fileTree(dir: 'libs', include: '*.jar')
+
+    compile 'org.springframework:spring-context:4.1.1.RELEASE'
+	compile 'org.springframework:spring-context-support:4.1.1.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.1.1.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.1.1.RELEASE'
+    compile 'org.springframework:spring-tx:4.1.1.RELEASE'
+    compile 'org.springframework.data:spring-data-redis:1.2.1.RELEASE'
+    compile 'org.mybatis:mybatis:3.2.7'
+	compile 'org.mybatis:mybatis-spring:1.2.2'
+	compile 'commons-dbcp:commons-dbcp:1.4'
+	compile 'commons-beanutils:commons-beanutils:1.7.0'
+	compile 'commons-lang:commons-lang:2.6'
+	compile 'org.apache.httpcomponents:httpclient:4.3.5'
+	compile 'org.apache.axis:axis:1.4'
+	compile 'org.apache.axis:axis-jaxrpc:1.4'
+	compile 'org.apache.axis:axis-saaj:1.4'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.4.3'
+	compile 'javax.mail:mail:1.4.7'
+	compile 'javax.servlet:servlet-api:3.0-alpha-1'
+	compile 'jstl:jstl:1.2'
+	compile 'ch.qos.logback:logback-core:1.1.2'
+	compile 'ch.qos.logback:logback-classic:1.1.2'
+	compile 'ch.qos.logback:logback-parent:1.1.2'
+	compile 'joda-time:joda-time:2.7'
+	compile 'jdom:jdom:1.0'
+	compile 'redis.clients:jedis:2.4.2'
+	compile 'log4j:log4j:1.2.16'
+	
+	
+	testCompile 'org.springframework:spring-test:4.1.1.RELEASE'
+    testCompile 'junit:junit:4.+'
+}
